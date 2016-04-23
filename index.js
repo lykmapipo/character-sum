@@ -1,9 +1,16 @@
 'use strict';
 
-//TODO options
-//case sensitive?
-//padds
-function characterSum(characters) {
+//dependencies
+var _ = require('lodash');
+
+function characterSum(characters, options) {
+
+    //merge default options
+    var options = _.merge({
+        caseSensitive: false,
+        prefix: undefined,
+        suffix: undefined
+    }, options);
 
     if (!characters && characters.length < 0) {
         return 0;
